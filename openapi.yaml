@@ -1,0 +1,89 @@
+openapi: 3.0.4
+info:
+  title: Domain and IP Pinger
+  description: Pinger is a simple tool for checking if a URL is up. It returns a boolean value indicating whether the URL is up or not.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/pinger:
+    post:
+      summary: Ping Host Domain
+      description: Pinger is a simple tool for checking if a URL is up. It returns a boolean value indicating whether the URL is up or not.
+      operationId: pinger
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  host: google.com
+                  numericHost: 2607:f8b0:4001:c1d::64
+                  alive: true
+                  roundTrips: 3
+                  packetLoss: 0
+                  minMS: 1.3
+                  avgMS: 25.3733333333333
+                  maxMS: 72.9
+                  stdDev: 33.6073814643285
+                  times:
+                  - 72.9
+                  - 1.3
+                  - 1.92
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                host:
+                  type: string
+                  description: The host name or public IP that you want to ping
+                  example: google.com
+                timeout:
+                  type: integer
+                  description: The timeout for the ping request (in milliseconds). Default is 1000 milliseconds. Max is 3000
+              required:
+              - host
+              example:
+                host: google.com
+                retries: 1
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
