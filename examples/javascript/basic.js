@@ -9,23 +9,15 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/pinger';
 
 /**
- * Make a POST request to the Domain and IP Pinger API
+ * Make a GET request to the Domain and IP Pinger API
  */
 async function callDomainandIPPingerAPI() {
   try {
-    // Request body
-    const requestBody &#x3D; {
-    &quot;host&quot;: &quot;google.com&quot;,
-    &quot;retries&quot;: 1
-};
-
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
+        'x-api-key': API_KEY
+      }
     });
 
     // Check if response is successful
