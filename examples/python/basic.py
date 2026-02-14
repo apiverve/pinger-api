@@ -14,21 +14,14 @@ API_URL = 'https://api.apiverve.com/v1/pinger'
 
 def call_pinger_api():
     """
-    Make a POST request to the Domain and IP Pinger API
+    Make a GET request to the Domain and IP Pinger API
     """
     try:
-        # Request body
-        request_body &#x3D; {
-    &#x27;host&#x27;: &#x27;google.com&#x27;,
-    &#x27;retries&#x27;: 1
-}
-
         headers = {
-            'x-api-key': API_KEY,
-            'Content-Type': 'application/json'
+            'x-api-key': API_KEY
         }
 
-        response = requests.post(API_URL, headers=headers, json=request_body)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
