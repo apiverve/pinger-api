@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:pinger-api:1.1.12'
+    implementation 'com.github.apiverve:pinger-api:1.1.13'
 }
 ```
 
@@ -47,7 +47,9 @@ DomainandIPPingerAPIClient client = new DomainandIPPingerAPIClient("YOUR_API_KEY
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("key", "value");
+    parameters.put("host", "google.com");
+    parameters.put("timeout", 1500);
+    parameters.put("retries", 1);
 
     // Execute the request
     APIResponse response = client.execute(parameters);
@@ -135,7 +137,7 @@ For detailed API documentation, visit: [https://docs.apiverve.com/ref/pinger](ht
 
 ## Get Your API Key
 
-Get your API key from [https://apiverve.com](https://apiverve.com)
+Get your API key from [https://apiverve.com](https://apiverve.com?utm_source=android&utm_medium=readme)
 
 ---
 
@@ -162,4 +164,4 @@ This SDK is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## About APIVerve
 
-[APIVerve](https://apiverve.com) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
+[APIVerve](https://apiverve.com?utm_source=android&utm_medium=readme) provides production-ready REST APIs for developers. Fast, reliable, and easy to integrate.
