@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/pinger",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Pinger is a simple tool for checking if a URL is up. It returns a boolean value indicating whether the URL is up or not.",
   "main": "index.js",
   "types": "index.d.ts",
