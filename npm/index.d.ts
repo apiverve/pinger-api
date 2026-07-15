@@ -4,25 +4,37 @@ declare module '@apiverve/pinger' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface pingerResponse {
     status: string;
     error: string | null;
     data: DomainandIPPingerData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface DomainandIPPingerData {
-      host:        string;
-      numericHost: string;
-      alive:       boolean;
-      roundTrips:  number;
-      packetLoss:  number;
-      minMS:       number;
-      avgMS:       number;
-      maxMS:       number;
-      stdDev:      number;
-      times:       number[];
+      host:        null | string;
+      numericHost: null | string;
+      alive:       boolean | null;
+      roundTrips:  number | null;
+      packetLoss:  number | null;
+      minMS:       number | null;
+      avgMS:       number | null;
+      maxMS:       number | null;
+      stdDev:      number | null;
+      times:       (number | null)[];
   }
 
   export default class pingerWrapper {
