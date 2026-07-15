@@ -126,18 +126,18 @@ async function makeRequest() {
   "error": null,
   "data": {
     "host": "google.com",
-    "numericHost": "2607:f8b0:4001:c1d::64",
+    "numericHost": "2607:f8b0:4001:c6e::8a",
     "alive": true,
     "roundTrips": 3,
     "packetLoss": 0,
-    "minMS": 1.3,
-    "avgMS": 25.373333333333335,
-    "maxMS": 72.9,
-    "stdDev": 33.607381464328476,
+    "minMS": 0.652,
+    "avgMS": 0.6846666666666666,
+    "maxMS": 0.712,
+    "stdDev": 0.02478350706058811,
     "times": [
-      72.9,
-      1.3,
-      1.92
+      0.712,
+      0.652,
+      0.69
     ]
   }
 }
