@@ -20,12 +20,12 @@ namespace APIVerve.API.DomainandIPPinger
         /// The timeout for the ping request in milliseconds
         /// </summary>
         [JsonProperty("timeout")]
-        public string Timeout { get; set; }
+        public int? Timeout { get; set; }
 
         /// <summary>
         /// The number of ping retries to attempt
         /// </summary>
         [JsonProperty("retries")]
-        public string Retries { get; set; }
+        public int? Retries { get; set; }
     }
 }
