@@ -25,6 +25,9 @@ namespace APIVerve.API.DomainandIPPinger
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -36,27 +39,39 @@ namespace APIVerve.API.DomainandIPPinger
         public string NumericHost { get; set; }
 
         [JsonProperty("alive")]
-        public bool Alive { get; set; }
+        public bool? Alive { get; set; }
 
         [JsonProperty("roundTrips")]
-        public long RoundTrips { get; set; }
+        public long? RoundTrips { get; set; }
 
         [JsonProperty("packetLoss")]
-        public long PacketLoss { get; set; }
+        public long? PacketLoss { get; set; }
 
         [JsonProperty("minMS")]
-        public double MinMs { get; set; }
+        public double? MinMs { get; set; }
 
         [JsonProperty("avgMS")]
-        public double AvgMs { get; set; }
+        public double? AvgMs { get; set; }
 
         [JsonProperty("maxMS")]
-        public double MaxMs { get; set; }
+        public double? MaxMs { get; set; }
 
         [JsonProperty("stdDev")]
-        public double StdDev { get; set; }
+        public double? StdDev { get; set; }
 
         [JsonProperty("times")]
-        public double[] Times { get; set; }
+        public double?[] Times { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
