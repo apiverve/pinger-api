@@ -23,9 +23,9 @@ namespace APIVerve.API.DomainandIPPinger
         public int? Timeout { get; set; }
 
         /// <summary>
-        /// The number of ping retries to attempt
+        /// How many pings to send before averaging the round-trip time
         /// </summary>
-        [JsonProperty("retries")]
-        public int? Retries { get; set; }
+        [JsonProperty("roundTrips")]
+        public int? RoundTrips { get; set; }
     }
 }

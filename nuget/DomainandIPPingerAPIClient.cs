@@ -69,7 +69,7 @@ namespace APIVerve.API.DomainandIPPinger
         {
             { "host", new ValidationRule { Type = "string", Required = true } },
             { "timeout", new ValidationRule { Type = "integer", Required = false, Min = 100, Max = 3000 } },
-            { "retries", new ValidationRule { Type = "integer", Required = false, Min = 1, Max = 5 } }
+            { "roundTrips", new ValidationRule { Type = "integer", Required = false, Min = 1, Max = 5 } }
         };
 
         /// <summary>Format validation patterns</summary>
