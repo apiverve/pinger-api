@@ -30,7 +30,7 @@ class pingerWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/pinger';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"host":{"type":"string","required":true},"timeout":{"type":"integer","required":false,"min":100,"max":3000,"default":1500},"retries":{"type":"integer","required":false,"min":1,"max":5,"default":1}};
+        this.validationRules = {"host":{"type":"string","required":true},"timeout":{"type":"integer","required":false,"min":100,"max":3000,"default":1500},"roundTrips":{"type":"integer","required":false,"min":1,"max":5,"default":1}};
     }
 
     /**

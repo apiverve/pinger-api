@@ -16,7 +16,7 @@ const api = new pingerAPI({
 // Example query
 var query = {
   "host": "google.com",
-  "retries": 1
+  "roundTrips": 1
 };
 
 // Make the API request using callback
