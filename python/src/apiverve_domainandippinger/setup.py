@@ -10,14 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_domainandippinger',
-    version='1.1.14',
+    version='1.2.1',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Pinger is a simple tool for checking if a URL is up. It returns a boolean value indicating whether the URL is up or not.',
+    description='Domain and IP Pinger checks whether any domain name or public IP address is reachable and responding in real time. It returns an alive status and successful round trips, while paid plans add packet loss percentages and latency metrics.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com/marketplace/pinger?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/pinger?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',

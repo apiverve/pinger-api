@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -26,7 +26,7 @@ class PingerAPIClient:
     VALIDATION_RULES = {
         "host": {"type": "string", "required": True},
         "timeout": {"type": "integer", "required": False, "min": 100, "max": 3000, "default": 1500},
-        "retries": {"type": "integer", "required": False, "min": 1, "max": 5, "default": 1}
+        "roundTrips": {"type": "integer", "required": False, "min": 1, "max": 5, "default": 1}
     }
 
     # Format validation patterns
