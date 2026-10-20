@@ -16,7 +16,7 @@ async function callDomainandIPPingerAPI() {
     // Request body
     const requestBody &#x3D; {
     &quot;host&quot;: &quot;google.com&quot;,
-    &quot;retries&quot;: 1
+    &quot;roundTrips&quot;: 1
 };
 
     const response = await fetch(API_URL, {

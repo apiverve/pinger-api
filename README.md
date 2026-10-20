@@ -1,13 +1,13 @@
-# [Domain and IP Pinger API](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Domain and IP Pinger API](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Pinger is a simple tool for checking if a URL is up. It returns a boolean value indicating whether the URL is up or not.
+Domain and IP Pinger checks whether any domain name or public IP address is reachable and responding in real time. It returns an alive status and successful round trips, while paid plans add packet loss percentages and latency metrics.
 
 The Domain and IP Pinger API provides a simple, reliable way to integrate domain and ip pinger functionality into your applications. Built for developers who need production-ready domain and ip pinger capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -32,7 +32,7 @@ async function callDomainandIPPingerAPI() {
     try {
         const requestBody = {
     "host": "google.com",
-    "retries": 1
+    "roundTrips": 1
 };
 
         const response = await fetch('https://api.apiverve.com/v1/pinger', {
@@ -62,7 +62,7 @@ curl -X POST "https://api.apiverve.com/v1/pinger" \
   -H "Content-Type: application/json" \
   -d '{
     "host": "google.com",
-    "retries": 1
+    "roundTrips": 1
 }'
 ```
 
@@ -169,7 +169,7 @@ go get github.com/apiverve/pinger-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Domain and IP Pinger API](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Domain and IP Pinger API](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/pinger](https://docs.apiverve.com/ref/pinger)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -199,11 +199,41 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Domain and IP Pinger API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "host": "google.com",
+    "numericHost": "2607:f8b0:4001:c6e::8a",
+    "alive": true,
+    "roundTrips": 3,
+    "packetLoss": 0,
+    "minMS": 0.652,
+    "avgMS": 0.6846666666666666,
+    "maxMS": 0.712,
+    "stdDev": 0.02478350706058811,
+    "times": [
+      0.712,
+      0.652,
+      0.69
+    ]
+  }
 }
 ```
 
@@ -211,7 +241,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Domain and IP Pinger API](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Domain and IP Pinger API](https://apiverve.com/marketplace/pinger?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

@@ -15,7 +15,7 @@ public class BasicExample {
             // Request body
             Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
         parameters.put(&quot;host&quot;, &quot;google.com&quot;);
-        parameters.put(&quot;retries&quot;, 1);
+        parameters.put(&quot;roundTrips&quot;, 1);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);

@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Domain and IP Pinger
   description: >-
-    Pinger is a simple tool for checking if a URL is up. It returns a boolean
-    value indicating whether the URL is up or not.
+    Domain and IP Pinger checks whether any domain name or public IP address is
+    reachable and responding in real time. It returns an alive status and
+    successful round trips, while paid plans add packet loss percentages and
+    latency metrics.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/pinger:
     post:
-      summary: Ping Host Domain
+      summary: Domain and IP Pinger
       description: >-
         Pinger is a simple tool for checking if a URL is up. It returns a
         boolean value indicating whether the URL is up or not.
@@ -77,9 +79,9 @@ paths:
                 timeout:
                   type: integer
                   description: The timeout for the ping request in milliseconds
-                retries:
+                roundTrips:
                   type: integer
-                  description: The number of ping retries to attempt
+                  description: How many pings to send before averaging the round-trip time
               required:
                 - host
 components:
@@ -92,4 +94,4 @@ security:
   - api_key: []
 sampleRequest:
   host: google.com
-  retries: 1
+  roundTrips: 1

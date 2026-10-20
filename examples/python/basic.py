@@ -20,7 +20,7 @@ def call_pinger_api():
         # Request body
         request_body &#x3D; {
     &#x27;host&#x27;: &#x27;google.com&#x27;,
-    &#x27;retries&#x27;: 1
+    &#x27;roundTrips&#x27;: 1
 }
 
         headers = {
