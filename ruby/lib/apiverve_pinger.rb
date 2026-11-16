@@ -4,6 +4,6 @@ require_relative "apiverve_pinger/client"
 
 module APIVerve
   module Pinger
-    VERSION = "1.2.5"
+    VERSION = "1.2.6"
   end
 end
